@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "CIRCULAR UIO - Gestión y Trazabilidad de Residuos",
+  "short_name": "CIRCULAR UIO",
+  "description": "Sistema de gestión y trazabilidad de residuos reciclables del Aeropuerto Internacional de Quito",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#064e3b",
+  "theme_color": "#065f46",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

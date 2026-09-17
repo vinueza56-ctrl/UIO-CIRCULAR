@@ -1,20 +1,19 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# CIRCULAR UIO
 
-# Run and deploy your AI Studio app
+Sistema de gestión y trazabilidad de residuos reciclables para el Aeropuerto Internacional de Quito.
 
-This contains everything you need to run your app locally.
+## Estado del proyecto
 
-View your app in AI Studio: https://ai.studio/apps/b0c0c72e-c8c9-4f5e-8192-074448a42080
+Base limpia sin datos demo. La autenticación real, base de datos, Storage y RLS se conectarán con Supabase en los siguientes pasos.
 
-## Run Locally
+## Ejecutar localmente
 
-**Prerequisites:**  Node.js
+**Requisitos:** Node.js
 
+1. Instalar dependencias: `npm install`
+2. Configurar las variables de entorno necesarias.
+3. Ejecutar: `npm run dev`
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Seguridad
+
+No subir `.env`, `.env.local`, claves privadas ni secretos al repositorio.

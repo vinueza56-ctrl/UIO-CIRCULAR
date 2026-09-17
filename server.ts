@@ -172,7 +172,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`UIO EcoTrace server running on http://0.0.0.0:${PORT}`);
+    console.log(`CIRCULAR UIO server running on http://0.0.0.0:${PORT}`);
   });
 }
 
