@@ -43,8 +43,8 @@ export const EmpresaProfile: React.FC = () => {
                 <span className="font-medium text-slate-900">{currentCompany.business_name}</span>
               </div>
               <div className="flex justify-between py-1">
-                <span className="text-slate-500">Tipo de Concesión:</span>
-                <span className="font-semibold text-emerald-800">Operador Aeroportuario</span>
+                <span className="text-slate-500">Tipo de Operador:</span>
+                <span className="font-semibold text-emerald-800">Operador Comercial</span>
               </div>
             </div>
 
@@ -67,7 +67,7 @@ export const EmpresaProfile: React.FC = () => {
           {/* Contact Person */}
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
             <h4 className="font-bold text-slate-900 uppercase text-[10px] tracking-wider">
-              Responsable de Gestión Ambiental Asignado
+              Responsable del Operador Comercial
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
               <div className="flex items-center gap-2">

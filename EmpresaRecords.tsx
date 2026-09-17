@@ -34,7 +34,7 @@ export const EmpresaRecords: React.FC = () => {
 
   const handleExportCSV = () => {
     const rows = [
-      ['Codigo', 'Empresa', 'Area Aeropuerto', 'Residuo', 'Peso (kg)', 'Fecha', 'Hora', 'Estado'],
+      ['Codigo', 'Operador Comercial', 'Area Aeropuerto', 'Residuo', 'Peso (kg)', 'Fecha', 'Hora', 'Estado'],
       ...filtered.map((r) => {
         const wt = wasteTypes.find((w) => w.id === r.waste_type_id);
         return [

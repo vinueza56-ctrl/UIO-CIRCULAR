@@ -103,7 +103,7 @@ export const MonthlyReportsManager: React.FC = () => {
               Generación y Cierre de Acta Mensual
             </h2>
             <p className="text-xs text-slate-500">
-              Consolida todos los pesajes aprobados de una empresa en un documento legal oficial con código único.
+              Consolida todos los pesajes aprobados de un operador comercial en un documento oficial con código único.
             </p>
           </div>
         </div>
@@ -126,7 +126,7 @@ export const MonthlyReportsManager: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
           <div>
             <label className="block text-xs font-bold text-slate-700 uppercase">
-              1. Seleccionar Empresa
+              1. Seleccionar Operador Comercial
             </label>
             <select
               value={selectedCompanyId}

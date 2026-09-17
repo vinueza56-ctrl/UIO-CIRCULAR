@@ -107,7 +107,7 @@ const AppContent: React.FC = () => {
       <footer className="bg-white border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-500 print:hidden mt-auto">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <span>
-            <strong>CIRCULAR UIO</strong> · Sistema de Trazabilidad y Gestión de Residuos Reciclables
+            <strong>UIO CIRCULAR</strong> · Sistema de Trazabilidad y Gestión de Residuos Reciclables
           </span>
           <span className="text-[11px] text-slate-400">
             Aeropuerto Internacional Mariscal Sucre de Quito · Conforme al Plan de Manejo Ambiental Quiport

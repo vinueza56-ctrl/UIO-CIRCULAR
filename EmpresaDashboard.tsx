@@ -75,7 +75,7 @@ export const EmpresaDashboard: React.FC<EmpresaDashboardProps> = ({ onNavigateTa
           <div>
             <div className="flex items-center gap-2">
               <h2 className="text-lg sm:text-xl font-bold">
-                {currentCompany?.commercial_name || 'Portal de Empresa'}
+                {currentCompany?.commercial_name || 'Portal del Operador Comercial'}
               </h2>
               <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-200 border border-emerald-400/30">
                 Punto Autorizado UIO

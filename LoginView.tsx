@@ -33,7 +33,7 @@ export const LoginView: React.FC = () => {
           </div>
           <div>
             <span className="font-extrabold text-base tracking-tight text-white block">
-              CIRCULAR UIO
+              UIO CIRCULAR
             </span>
             <span className="text-[11px] text-emerald-400 font-semibold block">
               Aeropuerto Internacional Mariscal Sucre · Quito

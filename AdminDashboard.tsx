@@ -90,7 +90,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigateTab })
     const map = new Map<string, number>();
     approvedRecords.forEach((r) => {
       const comp = companies.find((c) => c.id === r.company_id);
-      const name = comp ? comp.commercial_name : 'Empresa';
+      const name = comp ? comp.commercial_name : 'Operador Comercial';
       map.set(name, (map.get(name) || 0) + r.weight_kg);
     });
 
@@ -103,7 +103,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigateTab })
   // Export CSV of approved records
   const handleExportCSV = () => {
     const rows = [
-      ['Codigo', 'Empresa', 'Area Aeropuerto', 'Residuo', 'Peso (kg)', 'Fecha', 'Hora', 'Estado', 'Gestor'],
+      ['Codigo', 'Operador Comercial', 'Area Aeropuerto', 'Residuo', 'Peso (kg)', 'Fecha', 'Hora', 'Estado', 'Gestor'],
       ...approvedRecords.map((r) => {
         const comp = companies.find((c) => c.id === r.company_id);
         const wt = wasteTypes.find((w) => w.id === r.waste_type_id);
@@ -328,7 +328,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigateTab })
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="font-bold text-sm text-slate-900">
-                Desempeño por Empresa del Aeropuerto
+                Desempeño por Operador Comercial
               </h3>
               <p className="text-[11px] text-slate-500">
                 Ranking de generación y valorización responsable

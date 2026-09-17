@@ -128,7 +128,7 @@ export const ActaPreviewModal: React.FC<ActaPreviewModalProps> = ({ report, onCl
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-xs">
             <div className="space-y-1.5 bg-slate-50/70 p-3.5 rounded-xl border border-slate-200/80">
               <div className="flex justify-between">
-                <span className="text-slate-500">Empresa Generadora:</span>
+                <span className="text-slate-500">Operador Comercial:</span>
                 <span className="font-bold text-slate-900 text-right">{company?.business_name || report.company_id}</span>
               </div>
               <div className="flex justify-between">
@@ -159,7 +159,7 @@ export const ActaPreviewModal: React.FC<ActaPreviewModalProps> = ({ report, onCl
                 <span className="font-bold text-emerald-800">{periodRecords.length} eventos de pesaje</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Responsable de Empresa:</span>
+                <span className="text-slate-500">Responsable del Operador Comercial:</span>
                 <span className="text-slate-800">{company?.responsible_name || 'Designado ambiental'}</span>
               </div>
             </div>
@@ -209,7 +209,7 @@ export const ActaPreviewModal: React.FC<ActaPreviewModalProps> = ({ report, onCl
                   {periodRecords.length === 0 && (
                     <tr>
                       <td colSpan={5} className="py-4 text-center text-slate-400 font-sans italic">
-                        No se registraron retiros aprobados en este período para la empresa.
+                        No se registraron retiros aprobados en este período para el operador comercial.
                       </td>
                     </tr>
                   )}
@@ -286,7 +286,7 @@ export const ActaPreviewModal: React.FC<ActaPreviewModalProps> = ({ report, onCl
                 <span className="font-serif italic text-slate-400 text-[11px]">Firma de Entrega Conforme</span>
               </div>
               <p className="font-bold text-slate-900 mt-1">{report.signer_company}</p>
-              <p className="text-[10px] text-slate-500">{company?.commercial_name || 'Empresa Generadora'}</p>
+              <p className="text-[10px] text-slate-500">{company?.commercial_name || 'Operador Comercial'}</p>
             </div>
 
             <div className="space-y-1">
@@ -300,7 +300,7 @@ export const ActaPreviewModal: React.FC<ActaPreviewModalProps> = ({ report, onCl
 
           {/* Document Verification Footer */}
           <div className="mt-8 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-[10px] text-slate-400">
-            <span>SISTEMA CIRCULAR UIO · HASH DE VERIFICACIÓN: {report.id.toUpperCase()}</span>
+            <span>SISTEMA UIO CIRCULAR · HASH DE VERIFICACIÓN: {report.id.toUpperCase()}</span>
             <span>Generado digitalmente: {new Date(report.generated_at).toLocaleString('es-EC')}</span>
           </div>
         </div>

@@ -99,7 +99,7 @@ export const NewRecordForm: React.FC<NewRecordFormProps> = ({ onSuccess }) => {
     const weightNum = parseFloat(weightKg);
 
     if (!companyId) {
-      alert('Por favor selecciona la empresa donde se realiza el retiro.');
+      alert('Por favor selecciona el operador comercial donde se realiza el retiro.');
       return;
     }
     if (!wasteTypeId) {
@@ -200,11 +200,11 @@ export const NewRecordForm: React.FC<NewRecordFormProps> = ({ onSuccess }) => {
         )}
 
         <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4">
-          {/* Step 1: Empresa & Área */}
+          {/* Step 1: Operador Comercial & Área */}
           <div className="space-y-1.5">
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
               <Building2 className="w-3.5 h-3.5 text-emerald-600" />
-              1. Empresa / Punto de Acopio
+              1. Operador Comercial / Punto de Acopio
             </label>
             <select
               id="select-company"
@@ -279,7 +279,7 @@ export const NewRecordForm: React.FC<NewRecordFormProps> = ({ onSuccess }) => {
               <div>
                 <strong className="block font-bold">POSIBLE REGISTRO DUPLICADO DETECTADO</strong>
                 <span>
-                  Ya se registró hoy un pesaje para esta empresa y residuo con peso de{' '}
+                  Ya se registró hoy un pesaje para este operador comercial y residuo con peso de{' '}
                   <strong>{duplicateWarning.weight_kg.toFixed(2)} kg</strong> a las{' '}
                   {duplicateWarning.record_time} (Código: {duplicateWarning.record_code}).
                   Verifica que no estés registrando el mismo bulto dos veces.

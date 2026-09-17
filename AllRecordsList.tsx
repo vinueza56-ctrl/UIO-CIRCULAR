@@ -69,7 +69,7 @@ export const AllRecordsList: React.FC = () => {
 
   const handleExportCSV = () => {
     const rows = [
-      ['Codigo', 'Empresa', 'Area Aeropuerto', 'Residuo', 'Peso (kg)', 'Fecha', 'Hora', 'Estado', 'Gestor'],
+      ['Codigo', 'Operador Comercial', 'Area Aeropuerto', 'Residuo', 'Peso (kg)', 'Fecha', 'Hora', 'Estado', 'Gestor'],
       ...filtered.map((r) => {
         const comp = companies.find((c) => c.id === r.company_id);
         const wt = wasteTypes.find((w) => w.id === r.waste_type_id);
@@ -106,7 +106,7 @@ export const AllRecordsList: React.FC = () => {
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Buscar por código (ej. UIO-REC-...), empresa o residuo..."
+              placeholder="Buscar por código (ej. UIO-REC-...), operador comercial o residuo..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white"
@@ -124,13 +124,13 @@ export const AllRecordsList: React.FC = () => {
         {/* Dropdowns row */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
           <div>
-            <label className="block text-[10px] font-bold text-slate-500 uppercase">Empresa:</label>
+            <label className="block text-[10px] font-bold text-slate-500 uppercase">Operador Comercial:</label>
             <select
               value={companyFilter}
               onChange={(e) => setCompanyFilter(e.target.value)}
               className="w-full text-xs p-2 rounded-xl border border-slate-200 bg-slate-50"
             >
-              <option value="all">Todas las Empresas</option>
+              <option value="all">Todos los Operadores Comerciales</option>
               {companies.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.commercial_name}
@@ -184,7 +184,7 @@ export const AllRecordsList: React.FC = () => {
             <thead>
               <tr className="bg-slate-50 text-slate-600 font-semibold border-b border-slate-200">
                 <th className="py-3 px-3.5">Código</th>
-                <th className="py-3 px-3.5">Empresa / Área</th>
+                <th className="py-3 px-3.5">Operador Comercial / Área</th>
                 <th className="py-3 px-3.5">Residuo</th>
                 <th className="py-3 px-3.5 text-right">Peso (kg)</th>
                 <th className="py-3 px-3.5 text-center">Balanza</th>

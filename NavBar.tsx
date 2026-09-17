@@ -101,7 +101,7 @@ export const NavBar: React.FC<NavBarProps> = ({ activeTab, setActiveTab }) => {
                 }`}
               >
                 <Building className="w-4 h-4" />
-                <span>Empresas Aeropuerto</span>
+                <span>Operadores Comerciales</span>
               </button>
 
               <button

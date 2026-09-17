@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenA
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-sm sm:text-base text-white tracking-tight">
-                  CIRCULAR UIO
+                  UIO CIRCULAR
                 </span>
                 <span className="hidden sm:inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800/80 uppercase">
                   Mariscal Sucre

@@ -194,7 +194,7 @@ export const CompaniesManager: React.FC = () => {
                 className="flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-emerald-700"
               >
                 <Edit2 className="w-3.5 h-3.5" />
-                <span>Editar Empresa</span>
+                <span>Editar Operador Comercial</span>
               </button>
             </div>
           </div>
@@ -234,7 +234,7 @@ export const CompaniesManager: React.FC = () => {
                   <input
                     type="text"
                     required
-                    placeholder="Nombre comercial de la empresa"
+                    placeholder="Nombre del operador comercial"
                     value={commercialName}
                     onChange={(e) => setCommercialName(e.target.value)}
                     className="w-full p-2 rounded-xl border border-slate-300 mt-1 font-semibold"
@@ -281,7 +281,7 @@ export const CompaniesManager: React.FC = () => {
                   <label className="block font-bold text-slate-700 uppercase">Correo Electrónico:</label>
                   <input
                     type="email"
-                    placeholder="ambiental@empresa.com"
+                    placeholder="ambiental@operador.com"
                     value={responsibleEmail}
                     onChange={(e) => setResponsibleEmail(e.target.value)}
                     className="w-full p-2 rounded-xl border border-slate-300 mt-1"
@@ -312,7 +312,7 @@ export const CompaniesManager: React.FC = () => {
                   type="submit"
                   className="px-4 py-2 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-700 rounded-xl shadow transition"
                 >
-                  Guardar Empresa
+                  Guardar Operador Comercial
                 </button>
               </div>
             </form>

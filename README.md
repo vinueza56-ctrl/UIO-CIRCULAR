@@ -1,4 +1,4 @@
-# CIRCULAR UIO
+# UIO CIRCULAR
 
 Sistema de gestión y trazabilidad de residuos reciclables para el Aeropuerto Internacional de Quito.
 

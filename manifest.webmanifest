@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "name": "CIRCULAR UIO - Gestión y Trazabilidad de Residuos",
-  "short_name": "CIRCULAR UIO",
+  "name": "UIO CIRCULAR - Gestión y Trazabilidad de Residuos",
+  "short_name": "UIO CIRCULAR",
   "description": "Sistema de gestión y trazabilidad de residuos reciclables del Aeropuerto Internacional de Quito",
   "start_url": "/",
   "scope": "/",

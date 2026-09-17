@@ -50,7 +50,7 @@ export const SupabaseSqlViewer: React.FC = () => {
         </div>
         <ul className="list-disc list-inside space-y-1 text-[11px] text-slate-300 pl-1">
           <li>
-            <strong>Empresas:</strong> Acceso restringido exclusivamente a registros donde <code>company_id = auth.company_id()</code> y <code>status = 'approved'</code>. No tienen visibilidad de datos de otras empresas ni de pesajes en revisión.
+            <strong>Operadores Comerciales:</strong> Acceso restringido exclusivamente a registros donde <code>company_id = auth.company_id()</code> y <code>status = 'approved'</code>. No tienen visibilidad de datos de otros operadores comerciales ni de pesajes en revisión.
           </li>
           <li>
             <strong>Gestores de Campo:</strong> Permiso de inserción con foto obligatoria y lectura de sus propios pesajes registrados.
