@@ -108,7 +108,7 @@ class LocalDatabase {
       const oldCompany = companies[existingIndex];
       updated = { ...oldCompany, ...company };
       companies[existingIndex] = updated;
-      this.addAuditLog(adminUser, 'Edición', 'companies', updated.id, oldCompany, updated, `Actualizada empresa ${updated.commercial_name}`);
+      this.addAuditLog(adminUser, 'Edición', 'companies', updated.id, oldCompany, updated, `Actualizado operador comercial ${updated.commercial_name}`);
     } else {
       updated = {
         ...company,
@@ -116,7 +116,7 @@ class LocalDatabase {
         created_at: new Date().toISOString(),
       };
       companies.push(updated);
-      this.addAuditLog(adminUser, 'Creación', 'companies', updated.id, null, updated, `Creada nueva empresa ${updated.commercial_name}`);
+      this.addAuditLog(adminUser, 'Creación', 'companies', updated.id, null, updated, `Creado nuevo operador comercial ${updated.commercial_name}`);
     }
 
     localStorage.setItem(STORAGE_KEYS.COMPANIES, JSON.stringify(companies));
@@ -141,7 +141,7 @@ class LocalDatabase {
     const oldState = comp.active;
     comp.active = !comp.active;
     localStorage.setItem(STORAGE_KEYS.COMPANIES, JSON.stringify(companies));
-    this.addAuditLog(adminUser, 'Edición', 'companies', id, { active: oldState }, { active: comp.active }, `${comp.active ? 'Activada' : 'Desactivada'} empresa ${comp.commercial_name}`);
+    this.addAuditLog(adminUser, 'Edición', 'companies', id, { active: oldState }, { active: comp.active }, `${comp.active ? 'Activado' : 'Desactivado'} operador comercial ${comp.commercial_name}`);
     this.notify();
     return comp.active;
   }
@@ -542,7 +542,7 @@ class LocalDatabase {
           closed_at: new Date().toISOString(),
           observations: `Cierre del período mensual ${monthPadded}/${year}. Trazabilidad verificada y actas emitidas por Gestión Ambiental Aeroportuaria.`,
           signer_gestor: Array.from(new Set(compRecords.map((r) => r.created_by_name).filter(Boolean))).join(', ') || 'Gestor ambiental',
-          signer_company: company?.responsible_name || 'Representante Legal de la Empresa',
+          signer_company: company?.responsible_name || 'Representante del Operador Comercial',
           signer_airport: adminUser.full_name,
         };
         existingReports.unshift(report);
@@ -707,7 +707,7 @@ CREATE TABLE IF NOT EXISTS public.profiles (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 3. TABLA: companies (Catálogo de empresas que operan en el aeropuerto)
+-- 3. TABLA: companies (Catálogo de operadores comerciales que operan en el aeropuerto)
 CREATE TABLE IF NOT EXISTS public.companies (
     id TEXT PRIMARY KEY,
     business_name TEXT NOT NULL,
@@ -821,7 +821,7 @@ $$;
 CREATE POLICY "Admin_Gestor_Select_WasteRecords" ON public.waste_records
     FOR SELECT USING (public.get_my_role() IN ('admin', 'gestor'));
 
--- 2. Empresa SOLO puede consultar registros APROBADOS de su propia empresa
+-- 2. Operador Comercial SOLO puede consultar registros APROBADOS de su propia organización
 CREATE POLICY "Empresa_Select_Own_Approved_WasteRecords" ON public.waste_records
     FOR SELECT USING (
         public.get_my_role() = 'empresa' 
@@ -842,7 +842,7 @@ CREATE POLICY "Admin_Update_WasteRecords" ON public.waste_records
 CREATE POLICY "Admin_Gestor_Select_Reports" ON public.monthly_reports
     FOR SELECT USING (public.get_my_role() IN ('admin', 'gestor'));
 
--- 2. Empresa SOLO puede consultar actas CERRADAS de su propia empresa
+-- 2. Operador Comercial SOLO puede consultar actas CERRADAS de su propia organización
 CREATE POLICY "Empresa_Select_Own_Closed_Reports" ON public.monthly_reports
     FOR SELECT USING (
         public.get_my_role() = 'empresa' 

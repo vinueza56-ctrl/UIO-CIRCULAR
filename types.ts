@@ -83,7 +83,7 @@ export interface MonthlyReport {
   company_id: string;
   year: number;
   month: number; // 1-12
-  report_number: string; // e.g. ACTA-YYYY-MM-EMPRESA-001
+  report_number: string; // e.g. ACTA-YYYY-MM-OPERADOR-001
   total_weight_kg: number;
   status: 'draft' | 'closed';
   version: number;
