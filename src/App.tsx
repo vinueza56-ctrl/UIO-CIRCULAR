@@ -5,6 +5,7 @@ import { NavBar } from './components/common/NavBar';
 import { OfflineBanner } from './components/common/OfflineBanner';
 import { LoginView } from './components/auth/LoginView';
 import { SimbiosisView } from './components/simbiosis/SimbiosisView';
+import { SimbiosisView } from './components/simbiosis/SimbiosisView';
 
 // Admin Components
 import { AdminDashboard } from './components/admin/AdminDashboard';
@@ -40,7 +41,7 @@ const AppContent: React.FC = () => {
         setActiveTab('dashboard');
       }
     } else if (currentUser.role === 'gestor') {
-      const gestorTabs = ['nuevo-pesaje', 'mis-registros'];
+      const gestorTabs = ['nuevo-pesaje', 'mis-registros', 'simbiosis'];
       if (!gestorTabs.includes(activeTab)) {
         setActiveTab('nuevo-pesaje');
       }
@@ -70,6 +71,7 @@ const AppContent: React.FC = () => {
       {/* Main Body */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6">
         {activeTab === 'simbiosis' && (currentUser.role === 'admin' || currentUser.role === 'empresa') && <SimbiosisView />}
+        {activeTab === 'simbiosis' && <SimbiosisView />}
         {/* Admin Views */}
         {currentUser.role === 'admin' && (
           <>
