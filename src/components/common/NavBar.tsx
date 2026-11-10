@@ -14,7 +14,6 @@ import {
   Building2,
   FolderLock,
   Handshake,
-  Handshake,
 } from 'lucide-react';
 
 interface NavBarProps {
