@@ -13,6 +13,7 @@ import {
   Database,
   Building2,
   FolderLock,
+  Handshake,
 } from 'lucide-react';
 
 interface NavBarProps {
@@ -31,6 +32,7 @@ export const NavBar: React.FC<NavBarProps> = ({ activeTab, setActiveTab }) => {
     <nav className="bg-white border-b border-slate-200 shadow-xs sticky top-16 z-30 print:hidden overflow-x-auto">
       <div className="max-w-7xl mx-auto px-3 sm:px-6">
         <div className="flex items-center space-x-1 sm:space-x-2 py-2 min-w-max">
+          {(currentUser.role === 'admin' || currentUser.role === 'empresa') && <button onClick={() => setActiveTab('simbiosis')} className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold ${activeTab === 'simbiosis' ? 'bg-emerald-800 text-white' : 'text-slate-600 hover:bg-slate-100'}`}><Handshake className="w-4 h-4"/> Simbiosis empresarial</button>}
           {currentUser.role === 'admin' && (
             <>
               <button
@@ -143,6 +145,7 @@ export const NavBar: React.FC<NavBarProps> = ({ activeTab, setActiveTab }) => {
             </>
           )}
 
+          {(currentUser.role === 'admin' || currentUser.role === 'empresa') && <button onClick={() => setActiveTab('simbiosis')} className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold ${activeTab === 'simbiosis' ? 'bg-emerald-800 text-white' : 'text-slate-600 hover:bg-slate-100'}`}><Handshake className="w-4 h-4"/> Simbiosis empresarial</button>}
           {currentUser.role === 'gestor' && (
             <>
               <button

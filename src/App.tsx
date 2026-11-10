@@ -4,6 +4,7 @@ import { Header } from './components/common/Header';
 import { NavBar } from './components/common/NavBar';
 import { OfflineBanner } from './components/common/OfflineBanner';
 import { LoginView } from './components/auth/LoginView';
+import { SimbiosisView } from './components/simbiosis/SimbiosisView';
 
 // Admin Components
 import { AdminDashboard } from './components/admin/AdminDashboard';
@@ -34,7 +35,7 @@ const AppContent: React.FC = () => {
     if (!currentUser) return;
 
     if (currentUser.role === 'admin') {
-      const adminTabs = ['dashboard', 'pendientes', 'registros', 'actas', 'empresas', 'residuos', 'auditoria', 'supabase-sql'];
+      const adminTabs = ['dashboard', 'pendientes', 'registros', 'actas', 'empresas', 'residuos', 'auditoria', 'supabase-sql', 'simbiosis'];
       if (!adminTabs.includes(activeTab)) {
         setActiveTab('dashboard');
       }
@@ -44,7 +45,7 @@ const AppContent: React.FC = () => {
         setActiveTab('nuevo-pesaje');
       }
     } else if (currentUser.role === 'empresa') {
-      const empresaTabs = ['mi-dashboard', 'mis-retiros', 'mis-actas', 'mi-empresa'];
+      const empresaTabs = ['mi-dashboard', 'mis-retiros', 'mis-actas', 'mi-empresa', 'simbiosis'];
       if (!empresaTabs.includes(activeTab)) {
         setActiveTab('mi-dashboard');
       }
@@ -68,6 +69,7 @@ const AppContent: React.FC = () => {
 
       {/* Main Body */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6">
+        {activeTab === 'simbiosis' && (currentUser.role === 'admin' || currentUser.role === 'empresa') && <SimbiosisView />}
         {/* Admin Views */}
         {currentUser.role === 'admin' && (
           <>
